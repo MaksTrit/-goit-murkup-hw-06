@@ -216,6 +216,11 @@ button {
   font-style: normal;
 }
 
+ {
+  color: var(--contacts-footer-color);
+  letter-spacing: 0.03em;
+}
+
 .address-list .item:not(:last-child) {
   margin-bottom: 9px;
 }
@@ -244,6 +249,7 @@ button {
 
 .jointous-title,
 .subscription-title {
+  font-weight: 700;
   line-height: calc(16 / 14);
   text-transform: uppercase;
   color: var(--main-bg-color);
@@ -277,7 +283,6 @@ button {
 
 .subscription-form {
   margin-left: auto;
-  width: 570px;
 }
 
 .subscription-field {
@@ -288,13 +293,20 @@ button {
 }
 
 .subscription-email {
-  width: 100%;
+  width: 358px;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   padding: 15px 16px;
   background-color: transparent;
+}
+
+.subscription-email:not(:placeholder-shown) {
+  padding: ;
+  color: var(--contacts-footer-color);
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
 }
 
 .subscr-btn {
@@ -452,9 +464,11 @@ button {
 }
 .register-form-field {
   display: block;
-  margin-bottom: 10px;
-
   position: relative;
+}
+
+.register-form-field:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .register-form-label {
@@ -534,7 +548,13 @@ button {
 
 .register-form-checkbox {
   position: absolute;
-  visibility: hidden;
+  opacity: 0;
+}
+
+.register-form-checkbox:focus ~ .icon-unchecked {
+  fill: var(--accent-project-color);
+  stroke: var(--accent-project-color);
+  opacity: 1;
 }
 
 .icon-checked {
